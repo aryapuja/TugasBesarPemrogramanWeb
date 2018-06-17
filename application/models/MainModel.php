@@ -22,6 +22,19 @@
 		    $this->db->where('id_Akun',$id);
 		    return $this->db->get('akun');
 		}
+
+		public function regisAkun()
+		{
+			$password = md5($this->input->post('password'));
+			$data = array
+					(
+						'no_ktm'=>$this->input->post('no_ktm'),
+						'id_akun'=>$this->input->post('id_akun'),
+						'password'=>$password,
+						'nama_akun' =>$this->upload->data('nama_akun')
+					);
+			$this->db->insert('daftar_akun', $data);
+		}
 	}
 	
 	/* End of file MainModel.php */

@@ -12,7 +12,7 @@
 						<tr>
 							<td><center><b>No. Calon</b></center></td>
 							<td><center><b>Nama</b></center></td>
-							<!-- <td><center><b>Action</b></center></td> -->
+							<td><center><b>Informasi</b></center></td>
 						</tr>
 					</thead>
 					<tbody>
@@ -20,9 +20,9 @@
 							<tr>
 								<td><?php echo "<center>".$key->no_calon."</center>" ?></td>
 								<td><?php echo "<center>".$key->nama_akun."</center>" ?></td>
-								<!-- <td>
-									<center><a href="#"><button type="button" class="btn btn-info">Informasi</button></a></center>
-								</td> -->
+								<td>
+									<center><a href="#"><button type="button" class="btn btn-info">Cek</button></a></center>
+								</td>
 							</tr>
 							<?php } ?>
 					</tbody>
@@ -35,44 +35,45 @@
 				<div class="container">
 					<h1>Selamat Datang</h1>
 					<p>Silahkan login untuk memberikan suara anda</p>
-					<p>Jangan sampai anda golput, karena ini akan menentukan kualitas himpunan jurusan untuk 1 tahun kedepan </p>
+					<p>Jika belum memiliki akun, silahkan mendaftar terlebih dahulu</p>
 				</div>
 			</div>
+
+			<div class="panel-group" id="accordion">
+				
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><b>Syarat Pendaftaran Peserta Pemilih</b></a>
+						</h4>
+					</div>
+					<div id="collapse1" class="panel-collapse collapse in">
+						<div class="panel-body">
+							1. Mahasiswa aktif Politeknik Negeri Malang dengan bukti memiliki NIM saat pendaftaran. <br>
+							2. Bukan merupakan calon yang terdaftar pada saat pemilihan.
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><b>Syarat Pendaftaran Calon Ketua Umum</b></a>
+						</h4>
+					</div>
+					<div id="collapse2" class="panel-collapse collapse">
+						<div class="panel-body">
+							1. Mahasiswa aktif Politeknik Negeri Malang yang sedang menempuh pendidikan maksimal semester 6 <br>
+							2. Memiliki Index Prestasi Akademik (IPK) >= 3.5 <br>
+							3. Berdedikasi dan siap melaksanakan kewajiban sebagai ketua <br>
+							4. Melampirkan Visi dan Misi. <br>
+						</div>
+					</div>
+				</div>
+			</div> 
+
 		</div>
 	
 </body>
-
-<div id="login" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Login Form</h4>
-      </div>
-      <div class="modal-body">
-        <form action="<?php echo base_url().'index.php/MainController/login'?>" method="post">
-			<div class="form-group">
-		    	<label for="username">ID:</label>
-		     	<input type="text" class="form-control" name="id_akun" placeholder="Masukkan ID" required="required">
-		  	</div>
-
-			<div class="form-group">
-				<label for="password">Password:</label>
-			 	<input type="password" class="form-control" name="password" placeholder="Masukkan Password" required="required">
-			</div>
-
-			<div class="form-group">
-			  		<button type="submit" name="submit" value="Login" class="btn btn-info">Login</button>
-			  		<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-					<!-- <button type="button" class="btn btn-primary btn-block">Lupa Password</button></a> -->
-			</div>
-		</form>
-      </div>
-    </div>
-
-  </div>
-</div>
 
 </html>

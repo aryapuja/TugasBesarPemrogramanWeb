@@ -35,16 +35,49 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse navbar-ex1-collapse">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="<?php echo site_url();?>/pegawai/create"> <span class="glyphicon glyphicon-home"></span> Home</a></li>
+							<li><a href="<?php echo site_url();?>/pegawai/create"> <span class="glyphicon glyphicon-home"></span> Home</a></li>
 						</ul>
 						
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="<?php echo site_url();?>/MainController/register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+							<li><a href="<?php echo site_url();?>/MainController/addAkun"><span class="glyphicon glyphicon-user"></span> Register</a></li>
 							<li><a href="#" data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
 				</div>
 			</nav>
 		</div>
+
+		<div id="login" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Login Form</h4>
+		      </div>
+		      <div class="modal-body">
+		        <form action="<?php echo base_url().'index.php/MainController/login'?>" method="post">
+					<div class="form-group">
+				    	<label for="username">ID:</label>
+				     	<input type="text" class="form-control" name="id_akun" placeholder="Masukkan ID" required="required">
+				  	</div>
+
+					<div class="form-group">
+						<label for="password">Password:</label>
+					 	<input type="password" class="form-control" name="password" placeholder="Masukkan Password" required="required">
+					</div>
+
+					<div class="form-group">
+					  		<button type="submit" name="submit" value="Login" class="btn btn-info">Login</button>
+					  		<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+							<!-- <button type="button" class="btn btn-primary btn-block">Lupa Password</button></a> -->
+					</div>
+				</form>
+		      </div>
+		    </div>
+
+		  </div>
+</div>
 </body>
 </html>

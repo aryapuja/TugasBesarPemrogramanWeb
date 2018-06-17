@@ -42,9 +42,25 @@
 				redirect('','refresh');
 			}
 
-
 		}
 
+		public function addAkun()
+		{
+			$this->load->helper('url','form');
+			$this->load->library('form_validation');
+			$this->load->model('MainModel');
+			$this->form_validation->set_rules('no_ktm', 'Nomor KTM', 'trim|required|min_length[]|max_length[16]');
+			$this->form_validation->set_rules('id_akun', 'ID Akun', 'trim|required|min_length[4]|max_length[12]');
+			$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[4]|max_length[12]');
+			$this->form_validation->set_rules('nama', 'Nama Akun', 'trim|required|min_length[1]|max_length[255]');
+			if ($this->form_validation->run() == FALSE) {
+				$this->load->view('register');
+			} else {
+				$this->MainModel->regisAkun();
+				echo "<script>alert('Akun anda berhasil terdaftar')</script>";
+				redirect('','refresh');
+			}
+		}
 
 	}
 
