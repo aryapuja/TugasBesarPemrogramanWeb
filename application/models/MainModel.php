@@ -31,7 +31,7 @@
 						'no_ktm'=>$this->input->post('no_ktm'),
 						'id_akun'=>$this->input->post('id_akun'),
 						'password'=>$password,
-						'nama_akun' =>$this->upload->data('nama_akun')
+						'nama_akun' =>$this->input->post('nama_akun')
 					);
 			$this->db->insert('daftar_akun', $data);
 		}

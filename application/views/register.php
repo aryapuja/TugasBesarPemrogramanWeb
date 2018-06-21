@@ -19,7 +19,7 @@
 		  	</div>
 
 			<div class="form-group">
-		    	<label for="username">ID Akun:</label>
+		    	<label for="id">ID Akun:</label>
 		     	<input type="text" class="form-control" name="id_akun" placeholder="Masukkan ID Akun Anda (4-12 karakter)" required="required">
 		  	</div>
 
@@ -29,8 +29,8 @@
 			</div>
 
 			<div class="form-group">
-				<label for="password">Nama Akun:</label>
-			 	<input type="text" class="form-control" name="nama" placeholder="Masukkan Nama Anda" required="required">
+				<label for="nama_akun">Nama Akun:</label>
+			 	<input type="text" class="form-control" name="nama_akun" placeholder="Masukkan Nama Anda" required="required">
 			</div>
 
 			<div class="form-group">
@@ -38,7 +38,10 @@
 			  		<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
 					<!-- <button type="button" class="btn btn-primary btn-block">Lupa Password</button></a> -->
 			</div>
-		</form>
+
+			<?php echo validation_errors(); ?>
+			<?php echo form_close(); ?>
 		</div>
+
 </body>
 </html>

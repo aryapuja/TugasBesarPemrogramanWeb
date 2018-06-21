@@ -46,14 +46,13 @@
 
 		public function addAkun()
 		{
-			$this->load->helper('url','form');
-			$this->load->library('form_validation');
 			$this->load->model('MainModel');
-			$this->form_validation->set_rules('no_ktm', 'Nomor KTM', 'trim|required|min_length[]|max_length[16]');
+			$this->form_validation->set_rules('no_ktm', 'Nomor KTM', 'trim|required|max_length[16]|is_unique[akun.no_ktm]|is_unique[daftar_akun.no_ktm]');
 			$this->form_validation->set_rules('id_akun', 'ID Akun', 'trim|required|min_length[4]|max_length[12]');
 			$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[4]|max_length[12]');
-			$this->form_validation->set_rules('nama', 'Nama Akun', 'trim|required|min_length[1]|max_length[255]');
+			$this->form_validation->set_rules('nama_akun', 'Nama Akun', 'trim|required|min_length[1]|max_length[255]');
 			if ($this->form_validation->run() == FALSE) {
+				// echo "<script>alert('Terdapat kesalahan dalam pendaftaran, silahkan cek kembali data yang ada masukkan')</script>";
 				$this->load->view('register');
 			} else {
 				$this->MainModel->regisAkun();
