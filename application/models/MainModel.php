@@ -10,6 +10,14 @@
 			return $query->result();
 		}
 
+		public function getInfoCalon($id)
+		{
+			$this->db->select('nama_akun, foto, visi, misi');
+			$this->db->where('no_calon', $id);
+			$query = $this->db->get('calon');
+			return $query->result();
+		}
+
 		public function getAkun($table,$where)
 		{
 			return $this->db->get_where($table,$where);
@@ -17,10 +25,9 @@
 
 		public function getInfoAkun($id)
 		{
-			$this->db->select('nama_akun, level');
-		    // $this->db->from('akun');
-		    $this->db->where('id_Akun',$id);
-		    return $this->db->get('akun');
+			$this->db->select('id_akun, nama_akun, level');
+			$this->db->where('id_Akun',$id);
+			return $this->db->get('akun');
 		}
 
 		public function regisAkun()

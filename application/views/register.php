@@ -8,9 +8,10 @@
 	<div class="container-fluid">
 		
 	<?php include 'header.php'; ?>
-	<?php echo form_open_multipart('MainController/addAkun'); ?>
 
+	<?php echo form_open_multipart('MainController/addAkun'); ?>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<?php echo validation_errors(); ?>
 			<legend>Form Pendaftaran</legend>
 
 			<div class="form-group">
@@ -38,10 +39,8 @@
 			  		<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
 					<!-- <button type="button" class="btn btn-primary btn-block">Lupa Password</button></a> -->
 			</div>
-
-			<?php echo validation_errors(); ?>
-			<?php echo form_close(); ?>
-		</div>
+		</div>	
+	<?php echo form_close(); ?>
 
 </body>
 </html>

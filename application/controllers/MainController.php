@@ -11,9 +11,15 @@
 		
 		public function index()
 		{
+			$this->load->view('home');
+		}
+
+		public function list($id)
+		{
 			$this->load->model('MainModel');
 			$data['calon_list'] = $this->MainModel->getCalon();
-			$this->load->view('home', $data);
+			$data['info_calon'] = $this->MainModel->getInfoCalon($id);
+			$this->load->view('list', $data);
 		}
 
 		public function login()
@@ -28,20 +34,34 @@
 			$cek = $this->MainModel->getAkun("akun",$where)->num_rows();
 			if($cek > 0){
 				$result=$this->MainModel->getInfoAkun($id_akun)->row();
+				$id_akun=$result->id_akun;
 				$nama=$result->nama_akun;
 				$level=$result->level;
 				$array = array(
-					'name' => $nama,
-					'level' => $level
+					'id' => $id_akun,
+					'nama' => $nama,
+					'level' => $level,
+					'status' => 'login'
 				);
-				$this->session->set_userdata( $array );
-	 			$this->load->view('sukses');
+				$this->session->set_userdata($array);
+				if ($level == 'admin') {
+	 				redirect('Admin','refresh');
+				}else{
+					redirect('User','refresh');
+				}
+
 			}else{
-				// $this->load->view('gagal');
 				echo "<script>alert('Akun yang anda masukkan salah.\\nperiksa kembali username dan password anda!')</script>";
 				redirect('','refresh');
 			}
 
+		}
+
+		public function logout()
+		{
+			// $this->session->unset_userdata('logged_in');
+			$this->session->sess_destroy();
+			redirect('MainController','refresh');
 		}
 
 		public function addAkun()

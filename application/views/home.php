@@ -5,32 +5,7 @@
 </head>
 <body>
 	<div class="container-fluid">
-		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-			<div class="table-responsive">
-				<table class="table tab" border="0">
-					<thead>
-						<tr>
-							<td><center><b>No. Calon</b></center></td>
-							<td><center><b>Nama</b></center></td>
-							<td><center><b>Informasi</b></center></td>
-						</tr>
-					</thead>
-					<tbody>
-						<?php foreach ($calon_list as $key ) { ?>
-							<tr>
-								<td><?php echo "<center>".$key->no_calon."</center>" ?></td>
-								<td><?php echo "<center>".$key->nama_akun."</center>" ?></td>
-								<td>
-									<center><a href="#"><button type="button" class="btn btn-info">Cek</button></a></center>
-								</td>
-							</tr>
-							<?php } ?>
-					</tbody>
-				</table>
-			</div>
-		</div>
-
-		<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="jumbotron">
 				<div class="container">
 					<h1>Selamat Datang</h1>
@@ -67,6 +42,21 @@
 							2. Memiliki Index Prestasi Akademik (IPK) >= 3.5 <br>
 							3. Berdedikasi dan siap melaksanakan kewajiban sebagai ketua <br>
 							4. Melampirkan Visi dan Misi. <br>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><b>Punya pertanyaan, saran, atau keluhan? hubungi kami</b></a>
+						</h4>
+					</div>
+					<div id="collapse3" class="panel-collapse collapse">
+						<div class="panel-body">
+							1. <span class="glyphicon glyphicon-phone"> </span> (+62)812-4938-8400 (arya) / (+62)821-3213-8509 (endar) <br>
+							2. <span class="glyphicon glyphicon-envelope"> </span> aryapuja2103@gmail.com / endargayuhmuktitama@gmail.com <br>
+
 						</div>
 					</div>
 				</div>

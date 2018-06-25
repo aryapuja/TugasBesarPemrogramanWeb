@@ -36,12 +36,12 @@
 				<div class="collapse navbar-collapse navbar-ex1-collapse">
 					<ul class="nav navbar-nav">
 						<li><a href="<?php echo site_url();?>/MainController"> <span class="glyphicon glyphicon-home"></span> Home</a></li>
-						<li><a href="<?php echo site_url();?>/MainController/list/1"> <span class="glyphicon glyphicon-home"></span> List Calon</a></li>
+						<!-- <li><a href="<?php echo site_url();?>/MainController/list/1"> <span class="glyphicon glyphicon-home"></span> List Calon</a></li> -->
 					</ul>
 					
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="<?php echo site_url();?>/MainController/addAkun"><span class="glyphicon glyphicon-user"></span> Register</a></li>
-						<li><a href="#" data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+						<!-- <li><a href="<?php echo site_url();?>/MainController/addAkun"><span class="glyphicon glyphicon-user"></span> Register</a></li> -->
+						<li><a href="<?php echo site_url();?>/MainController/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 					</ul>
 				</div><!-- /.navbar-collapse -->
 			</div>
