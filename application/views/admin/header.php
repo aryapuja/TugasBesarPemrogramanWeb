@@ -19,7 +19,7 @@
 </head>
 <body>
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		<nav class="navbar navbar-default" role="navigation">
+		<nav class="navbar navbar-default" role="navigation" navbar-fixed-top>
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
@@ -35,10 +35,14 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-ex1-collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="<?php echo site_url();?>/MainController"> <span class="glyphicon glyphicon-home"></span> Home</a></li>
-						<!-- <li><a href="<?php echo site_url();?>/MainController/list/1"> <span class="glyphicon glyphicon-home"></span> List Calon</a></li> -->
+						<li><a href="<?php echo site_url();?>/Admin"> <span class="glyphicon glyphicon-stats"></span> Perolehan Suara</a></li>
+						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="glyphicon glyphicon-th-list"></span> Data Akun <span class="caret"></span></a>
+				        <ul class="dropdown-menu">
+							<li><a href="<?php echo site_url();?>/Admin/listAntri">List Antri</a></li>
+							<li><a href="<?php echo site_url();?>/Admin/listAkun">List Akun</a></li>
+						</ul>
+				      </li>
 					</ul>
-					
 					<ul class="nav navbar-nav navbar-right">
 						<!-- <li><a href="<?php echo site_url();?>/MainController/addAkun"><span class="glyphicon glyphicon-user"></span> Register</a></li> -->
 						<li><a href="<?php echo site_url();?>/MainController/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>

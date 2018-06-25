@@ -50,7 +50,7 @@
 								<td><?php echo $info->nama_akun ?></td>
 								<td><?php echo $info->foto ?></td>
 								<td><?php echo $info->visi ?></td>
-								<td><?php echo $info->misi ?></td>
+								<td><?php echo nl2br($info->misi)  ?></td>
 							</tr>
 							<?php } ?>
 					</tbody>
