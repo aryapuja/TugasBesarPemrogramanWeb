@@ -26,7 +26,7 @@
 								<td><?php echo $key->nama_akun ?></td>
 								<td>
 									<a href="<?php echo site_url()?>/Admin/terimaAkun/<?php echo $key->no_ktm; ?>"><button type="button" class="btn btn-success">Terima</button></a>
-									<a href="<?php echo site_url()?>/Admin/hapusAntri/<?php echo $key->no_ktm; ?>"><button type="button" class="btn btn-danger">Tolak</button></a>	
+									<a href="<?php echo site_url()?>/Admin/tolakAkun/<?php echo $key->no_ktm; ?>"><button type="button" class="btn btn-danger">Tolak</button></a>	
 								</td>
 							</tr>
 							<?php } ?>

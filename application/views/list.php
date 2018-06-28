@@ -31,31 +31,25 @@
 		</div>
 
 		<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+
+			<?php foreach ($info_calon as $info ) { ?>
+				<center>
+					<h1>Calon Nomor Urut <?php echo $info->no_calon ?></h1> <br>
+					<img src="<?php echo base_url()?>assets/upload/<?php echo $info->foto?>" width=300 height=300 /> <br>
+					<h2>
+						<?php echo $info->nama_akun ?> 
+				</center>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<center> <h2>Visi</h2> </center> <br>
+							<?php echo $info->visi ?>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<center> <h2>Misi</h2> </center> <br>
+							<?php echo nl2br($info->misi) ?>
+						</div>
+					</h2>
+			<?php } ?>
 			
-			<h1>Calon Nomor Urut <?php echo $key->no_calon ?></h1>
-			
-			<div class="table-responsive">
-				<table class="table tab" border="0">
-					<thead>
-						<tr>
-							<td><center><b>Nama</b></center></td>
-							<td><center><b>Foto</b></center></td>
-							<td><center><b>Visi</b></center></td>
-							<td><center><b>Misi</b></center></td>
-						</tr>
-					</thead>
-					<tbody>
-						<?php foreach ($info_calon as $info ) { ?>
-							<tr>
-								<td><?php echo $info->nama_akun ?></td>
-								<td><?php echo $info->foto ?></td>
-								<td><?php echo $info->visi ?></td>
-								<td><?php echo nl2br($info->misi)  ?></td>
-							</tr>
-							<?php } ?>
-					</tbody>
-				</table>
-			</div>
 		</div>
 	
 </body>

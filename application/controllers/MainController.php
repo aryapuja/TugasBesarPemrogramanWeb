@@ -76,7 +76,7 @@
 				$this->load->view('register');
 			} else {
 				$this->MainModel->regisAkun();
-				echo "<script>alert('Akun anda berhasil terdaftar')</script>";
+				echo "<script>alert('Permintaan pendaftaran berhasil dikirim.\\nJika dalam 2x24 jam belum dapat login, hubungi admin')</script>";
 				redirect('','refresh');
 			}
 		}

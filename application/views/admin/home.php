@@ -17,7 +17,7 @@
             <div class="col-lg-4 col-xlg-3 col-md-5">
                 <div class="card">
                     <div class="card-block">
-                        <center class="m-t-30"> <img src="<?php echo base_url()?>assets/upload/<?php echo $key->foto?>" class="img-circle" width="300" />
+                        <center class="m-t-30"> <img src="<?php echo base_url()?>assets/upload/<?php echo $key->foto?>" width=250 height=400 />
 						<h4 class="card-title m-t-10"> Calon <?php echo $key->no_calon ?></h4>
 						<div class="row text-center justify-content-md-center">
 							<div class="col-4">

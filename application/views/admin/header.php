@@ -44,7 +44,7 @@
 				      </li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<!-- <li><a href="<?php echo site_url();?>/MainController/addAkun"><span class="glyphicon glyphicon-user"></span> Register</a></li> -->
+						<li><a href="<?php echo site_url();?>/Admin/waktu"><span class="glyphicon glyphicon-time"></span> Waktu</a></li>
 						<li><a href="<?php echo site_url();?>/MainController/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 					</ul>
 				</div><!-- /.navbar-collapse -->

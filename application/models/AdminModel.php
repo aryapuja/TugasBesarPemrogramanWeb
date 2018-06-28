@@ -40,15 +40,39 @@
 			$this->db->insert('akun', $data);
 		}
 
-		public function tolakAkun($no)
-		{
-			# code...
-		}
-
 		public function hapusAntri($no)
 		{
 			$this->db->where('no_ktm', $no);
 			$this->db->delete('daftar_akun');
+		}
+
+		public function hapusAkun($no)
+		{
+			$this->db->where('no_ktm', $no);
+			$this->db->delete('akun');
+		}
+
+		public function getWaktu()
+		{
+			$query=$this->db->get('waktu');
+			return $query->result();
+		}
+
+		public function aturWaktu($waktu)
+		{
+			$query=$this->db->get('waktu');
+			return $query->result();
+		}
+
+		public function updateWaktu($waktu)
+		{
+			$data = array
+                    (
+                        'mulai'=>$this->input->post('mulai'),
+                        'selesai'=>$this->input->post('selesai')
+                    );
+            $this->db->where('mulai', $waktu);
+            $this->db->update('waktu', $data);
 		}
 
 	}
