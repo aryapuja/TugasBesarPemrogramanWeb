@@ -19,6 +19,20 @@
 		{
 			$this->load->view('user/user');
 		}
+
+		public function editAkun($id)
+		{
+			$this->load->model('UserModel');
+			$data['akun']=$this->UserModel->getInfoById($id);
+
+			if ($this->form_validation->run() == FALSE) {
+				$this->load->view('user/editAkun',$data);
+			} else {
+				$this->UserModel->editAkun($id);
+				echo "<script>alert('Informasi Akun Berhasil di Update!')</script>";
+				$this->load->view('user/user');
+			}
+		}
 	
 	}
 	

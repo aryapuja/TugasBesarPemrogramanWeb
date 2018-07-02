@@ -36,11 +36,16 @@
 				<div class="collapse navbar-collapse navbar-ex1-collapse">
 					<ul class="nav navbar-nav">
 						<li><a href="<?php echo site_url();?>/MainController"> <span class="glyphicon glyphicon-home"></span> Home</a></li>
-						<!-- <li><a href="<?php echo site_url();?>/MainController/list/1"> <span class="glyphicon glyphicon-home"></span> List Calon</a></li> -->
+						<li><a href="<?php echo site_url();?>/../list/1"> <span class="glyphicon glyphicon-home"></span> Voting</a></li>
+						<li><a href="<?php echo site_url();?>/../list/1"> <span class="glyphicon glyphicon-home"></span> Halaman Calon</a></li>
 					</ul>
 					
 					<ul class="nav navbar-nav navbar-right">
-						<!-- <li><a href="<?php echo site_url();?>/MainController/addAkun"><span class="glyphicon glyphicon-user"></span> Register</a></li> -->
+						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="glyphicon glyphicon-user"></span> <?php echo $this->session->userdata('nama'); ?></span> <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="<?php echo site_url();?>/User/editAkun/<?php echo $this->session->userdata('id'); ?>">Edit Nama Akun</a></li>
+							<li><a href="<?php echo site_url();?>/User/editPassword/<?php echo $this->session->userdata('id'); ?>">Edit Password</a></li>
+						</ul>
 						<li><a href="<?php echo site_url();?>/MainController/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 					</ul>
 				</div><!-- /.navbar-collapse -->
