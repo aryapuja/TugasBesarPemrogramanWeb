@@ -4,12 +4,6 @@
 
 	class AdminModel extends CI_Model {
 
-		public function getAntri()
-		{
-			$query=$this->db->get('daftar_akun');
-			return $query->result();
-		}
-
 		public function listAkun()
 		{
 			// $this->db->group_by("level");
@@ -18,10 +12,37 @@
 			return $query->result();
 		}
 
-		public function getAntriByNo($no)
+		public function listDaftarCalon()
+		{
+			$query=$this->db->get('daftar_calon');
+			return $query->result();
+		}
+
+		public function getBelum($status)
+		{
+			$this->db->where('memilih', $status);
+			$query=$this->db->get('akun');
+			return $query->result();
+		}
+
+		public function getAntri()
+		{
+			$query=$this->db->get('daftar_akun');
+			return $query->result();
+		}
+
+
+		public function getAntriByNo($no,$tabel)
 		{
 			$this->db->where('no_ktm', $no);
-			$query = $this->db->get('daftar_akun');
+			$query = $this->db->get($tabel);
+			return $query->result();
+		}
+
+		public function getAntriById($no)
+		{
+			$this->db->where('id_akun',$no);
+			$query = $this->db->get('daftar_calon');
 			return $query->result();
 		}
 
@@ -40,16 +61,34 @@
 			$this->db->insert('akun', $data);
 		}
 
-		public function hapusAntri($no)
+		public function terimaCalon($no)
 		{
-			$this->db->where('no_ktm', $no);
-			$this->db->delete('daftar_akun');
+			$data = array
+					(
+						'id_akun'=>$this->input->post('id_akun'),
+						'nama_akun' =>$this->input->post('nama_akun'),
+						'visi' =>$this->input->post('visi'),
+						'misi' =>$this->input->post(nl2br('misi')),
+						'jumlah_suara'=>'0',
+						'foto'=>'kosong'
+					);
+			$memilih = array('memilih'=>'tidak');
+			$this->db->where('id_akun', $no);
+			$this->db->insert('calon', $data);
+			$this->db->where('id_akun', $no);
+			$this->db->update('akun', $memilih);
 		}
 
-		public function hapusAkun($no)
+		public function hapus($no,$tabel)
 		{
 			$this->db->where('no_ktm', $no);
-			$this->db->delete('akun');
+			$this->db->delete($tabel);
+		}
+
+		public function hapusCalon($id)
+		{
+			$this->db->where('id_akun', $id);
+			$this->db->delete('daftar_calon');
 		}
 
 		public function getWaktu()

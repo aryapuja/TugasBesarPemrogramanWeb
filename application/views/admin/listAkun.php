@@ -21,7 +21,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<?php foreach ($antri as $key ) { ?>
+						<?php foreach ($akun as $key ) { ?>
 							<tr>
 								<td><?php echo $key->id_akun ?></td>
 								<td><?php echo $key->nama_akun ?></td>

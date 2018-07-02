@@ -38,9 +38,10 @@
 						<li><a href="<?php echo site_url();?>/Admin"> <span class="glyphicon glyphicon-stats"></span> Perolehan Suara</a></li>
 						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="glyphicon glyphicon-th-list"></span> Data Akun <span class="caret"></span></a>
 				        <ul class="dropdown-menu">
-							<li><a href="<?php echo site_url();?>/Admin/listAntri">List Antri</a></li>
-							<li><a href="<?php echo site_url();?>/Admin/listAkun">List Akun</a></li>
+							<li><a href="<?php echo site_url();?>/Admin/listAntri"><span class="glyphicon glyphicon-th-large"></span> List Antri</a></li>
+							<li><a href="<?php echo site_url();?>/Admin/listAkun"><span class="glyphicon glyphicon-th-large"></span> List Akun</a></li>
 						</ul>
+						<li><a href="<?php echo site_url();?>/Admin/listAntriCalon"><span class="glyphicon glyphicon-time"></span> List Bakal Calon</a></li>
 				      </li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
