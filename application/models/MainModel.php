@@ -25,7 +25,7 @@
 
 		public function getInfoAkun($id)
 		{
-			$this->db->select('id_akun, nama_akun, level');
+			$this->db->select('id_akun, nama_akun, level, memilih');
 			$this->db->where('id_Akun',$id);
 			return $this->db->get('akun');
 		}

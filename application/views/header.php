@@ -36,7 +36,6 @@
 				<div class="collapse navbar-collapse navbar-ex1-collapse">
 					<ul class="nav navbar-nav">
 						<li><a href="<?php echo site_url();?>/MainController"> <span class="glyphicon glyphicon-home"></span> Home</a></li>
-						<li><a href="<?php echo site_url();?>/MainController/list/1"> <span class="glyphicon glyphicon-home"></span> List Calon</a></li>
 					</ul>
 					
 					<ul class="nav navbar-nav navbar-right">

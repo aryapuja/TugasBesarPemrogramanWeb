@@ -42,7 +42,8 @@
 							<li><a href="<?php echo site_url();?>/Admin/listAkun"><span class="glyphicon glyphicon-th-large"></span> List Akun</a></li>
 						</ul>
 						<li><a href="<?php echo site_url();?>/Admin/listAntriCalon"><span class="glyphicon glyphicon-time"></span> List Bakal Calon</a></li>
-				      </li>
+						<li><a href="<?php echo site_url();?>/Admin/report"><span class="glyphicon glyphicon-time"></span> Report</a></li>
+				      	</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="<?php echo site_url();?>/Admin/waktu"><span class="glyphicon glyphicon-time"></span> Waktu</a></li>

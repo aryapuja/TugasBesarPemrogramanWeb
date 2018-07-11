@@ -70,13 +70,13 @@
 						'visi' =>$this->input->post('visi'),
 						'misi' =>$this->input->post(nl2br('misi')),
 						'jumlah_suara'=>'0',
-						'foto'=>'kosong'
+						'foto'=>'no_image.png'
 					);
-			$memilih = array('memilih'=>'tidak');
+			// $memilih = array('memilih'=>'tidak');
 			$this->db->where('id_akun', $no);
 			$this->db->insert('calon', $data);
-			$this->db->where('id_akun', $no);
-			$this->db->update('akun', $memilih);
+			// $this->db->where('id_akun', $no);
+			// $this->db->update('akun', $memilih);
 		}
 
 		public function hapus($no,$tabel)
@@ -112,6 +112,16 @@
                     );
             $this->db->where('mulai', $waktu);
             $this->db->update('waktu', $data);
+		}
+
+		public function resetLevel()
+		{
+			$data = array('level'=>"pemilih",'memilih'=>'belum');
+			$this->db->where('level', "calon");
+			$this->db->update('akun', $data);
+			$this->db->where('level', "pemilih");
+			$this->db->update('akun', $data);
+			$this->db->empty_table('calon');
 		}
 
 	}
