@@ -65,8 +65,8 @@
               </div>
               <h3>Status Akun</h3>
               <p class="lead mb-0"><?php echo $this->session->userdata('level'); ?></p>
-              <p class="lead mb-0"><a href="<?php echo site_url();?>/User/daftarCalon/<?php echo $this->session->userdata('id') ?>">Daftar Menjadi Calon</a></p>
-              <p class="lead mb-0"><a href="<?php echo site_url();?>/Calon/">Halaman Calon</a></p>
+              <p class="lead mb-0"><a href="<?php echo site_url();?>/Daftar/daftarCalon/<?php echo $this->session->userdata('id') ?>">Daftar Menjadi Calon</a></p>
+              <p class="lead mb-0"><a href="<?php echo site_url();?>/Calon/editInfoCalon/<?php echo $this->session->userdata('id') ?>">Halaman Calon</a></p>
             </div>
           </div>
           <div class="col-lg-4">

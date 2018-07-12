@@ -12,8 +12,8 @@
 
 		public function getInfoCalon($id)
 		{
-			$this->db->select('no_calon, nama_akun, foto, visi, misi');
-			$this->db->where('no_calon', $id);
+			$this->db->select('no_calon, id_akun, nama_akun, foto, visi, misi');
+			$this->db->where('id_akun', $id);
 			$query = $this->db->get('calon');
 			return $query->result();
 		}

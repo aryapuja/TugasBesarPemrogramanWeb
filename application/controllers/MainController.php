@@ -16,14 +16,6 @@
 			$this->load->view('home2',$data);
 		}
 
-		public function list($id)
-		{
-			$this->load->model('MainModel');
-			$data['calon_list'] = $this->MainModel->getCalon();
-			$data['info_calon'] = $this->MainModel->getInfoCalon($id);
-			$this->load->view('list', $data);
-		}
-
 		public function login()
 		{
 			$this->load->model('MainModel');

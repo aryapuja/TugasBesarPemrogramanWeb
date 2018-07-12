@@ -22,7 +22,21 @@
 
 		public function index()
 		{
-			$this->load->view('user/viewPilih');
+			$this->load->model('MainModel');
+			$data['info_calon'] = $this->MainModel->getCalon();
+			$this->load->view('user/viewPilih',$data);
+		}
+
+		public function vote($no_calon)
+		{
+			$this->load->model('UserModel');
+			$this->UserModel->vote($no_calon,$this->session->userdata('id'));
+			$this->session->unset_userdata('nama');
+			$this->load->model('MainModel');
+			$result=$this->MainModel->getInfoAkun($this->session->userdata('id'))->row();
+			$memilih=$result->memilih;
+			$this->session->set_userdata('memilih',$memilih);
+			redirect('User','refresh');
 		}
 	
 	}

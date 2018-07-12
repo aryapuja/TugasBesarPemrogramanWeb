@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Agency - Start Bootstrap Theme</title>
+    <title>Pemilihan</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url();?>assets/pilih/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -22,6 +22,13 @@
 
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url();?>assets/pilih/css/agency.min.css" rel="stylesheet">
+    
+    <!-- Custom styles for this template -->
+    <style type="text/css" media="screen">
+      .rounded-circle{
+        height: 300px;
+      }
+    </style>
 
   </head>
 
@@ -30,7 +37,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+        <!-- <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a> -->
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -40,17 +47,13 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="<?php echo site_url();?>/User">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+            <?php foreach ($info_calon as $key): ?>
+              <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#calon<?php echo $key->no_calon ?>">Calon <?php echo $key->no_calon ?></a>
             </li>
+            <?php endforeach ?>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#team">Team</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="#pilih">Pilih</a>
             </li>
           </ul>
         </div>
@@ -61,138 +64,72 @@
     <header class="masthead">
       <div class="container">
         <div class="intro-text">
-          <div class="intro-lead-in">Welcome To Our Studio!</div>
-          <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
+          <div class="intro-lead-in">Baca, Pahami, Pilih!</div>
+          <div class="intro-heading text-uppercase">SATU SUARA UNTUK PERUBAHAN YANG LEBIH BAIK</div>
+          <!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a> -->
         </div>
       </div>
     </header>
 
     <!-- Services -->
-    <section id="services">
+    <?php foreach ($info_calon as $key): ?>
+      <section id="calon<?php echo $key->no_calon ?>">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Services</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h2 class="section-heading text-uppercase">Calon Nomor Urut <?php echo $key->no_calon ?></h2>
+            <!-- <h3 class="section-subheading text-muted"><?php echo $key->nama_akun ?></h3> -->
           </div>
         </div>
         <div class="row text-center">
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+              <i class="fa fa-commenting fa-stack-1x fa-inverse"></i>
             </span>
-            <h4 class="service-heading">E-Commerce</h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            <h4 class="service-heading">Visi</h4>
+            <p class="text-muted"><?php echo $key->visi ?></p>
           </div>
           <div class="col-md-4">
-            <span class="fa-stack fa-4x">
+            <!-- <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
               <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">Responsive Design</h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            </span> -->
+            <h4 class="service-heading"><?php echo $key->nama_akun ?></h4>
+            <img class="mx-auto rounded-circle" src="<?php echo base_url()?>assets/upload/<?php echo $key->foto?>" alt="<?php echo $key->foto?>">
+            <!-- <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p> -->
           </div>
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+              <i class="fa fa-tasks fa-stack-1x fa-inverse"></i>
             </span>
-            <h4 class="service-heading">Web Security</h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            <h4 class="service-heading">Misi</h4>
+            <p class="text-muted"><?php echo nl2br($key->misi) ?></p>
           </div>
         </div>
       </div>
     </section>
+    <?php endforeach ?>
 
     <!-- Team -->
-    <section class="bg-light" id="team">
+    <section class="bg-light" id="pilih">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h2 class="section-heading text-uppercase">Pilihlah Dengan Bijak</h2>
+            <h3 class="section-subheading text-muted">Jangan sampai menyesali pilihan anda sendiri</h3>
           </div>
         </div>
         <div class="row">
+        <?php foreach ($info_calon as $key): ?>
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="<?php echo base_url();?>assets/pilih/img/team/1.jpg" alt="">
-              <h4>Kay Garland</h4>
-              <p class="text-muted">Lead Designer</p>
-              <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
-                </li>
-              </ul>
+              <h4 class="service-heading"> Calon Nomor Urut <?php echo $key->no_calon ?> </h4>
+              <img class="mx-auto rounded-circle" src="<?php echo base_url()?>assets/upload/<?php echo $key->foto?>" alt="">
+              <a href="<?php echo site_url();?>/Pilih/vote/<?php echo $key->no_calon ?>" onclick="return confirm('Anda Yakin Dengan Pilihan Anda?')"><h4><?php echo $key->nama_akun ?></h4></a>
             </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src="<?php echo base_url();?>assets/pilih/img/team/2.jpg" alt="">
-              <h4>Larry Parker</h4>
-              <p class="text-muted">Lead Marketer</p>
-              <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src="<?php echo base_url();?>assets/pilih/img/team/3.jpg" alt="">
-              <h4>Diana Pertersen</h4>
-              <p class="text-muted">Lead Developer</p>
-              <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-          </div>
+          </div><?php endforeach ?>
         </div>
       </div>
     </section>
