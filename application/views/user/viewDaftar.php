@@ -84,7 +84,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" onclick="return confirm('Anda yakin ingin mendaftar? data yang sudah masuk tidak dapat dirubah!')">
 							Daftar
 						</button>
 					</div>

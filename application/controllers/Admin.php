@@ -130,9 +130,9 @@
 			} else {
 				$this->AdminModel->updateWaktu($waktu);
 				echo "<script>alert('Waktu Berhasil Dirubah!')</script>";
-
-				$data['waktu'] = $this->AdminModel->getWaktu();
-				$this->load->view('admin/waktu', $data);
+				redirect('Admin/waktu','refresh');
+				// $data['waktu'] = $this->AdminModel->getWaktu();
+				// $this->load->view('admin/waktu', $data);
 			}
 		}
 

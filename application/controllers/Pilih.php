@@ -10,7 +10,25 @@
 			if ($this->session->userdata('status')=='login') 
 			{
 				if($this->session->userdata('memilih')=='belum'){
-
+					$this->load->model('AdminModel');
+					$waktu = $this->AdminModel->getWaktu();
+					foreach ($waktu as $key ) {
+						$start_date = date('d-n-Y',strtotime($key->mulai));
+						$end_date = date('d-n-Y',strtotime($key->selesai));
+					}
+					
+    				$todays_date = date("d-n-Y");
+    				if ($todays_date >= $start_date && $todays_date <= $end_date){
+					       
+					    }else{
+					        if($todays_date < $start_date){
+								echo "<script>alert('Waktu pemilihan belum dimulai')</script>";
+								redirect('User','refresh');
+					        }else{
+								echo "<script>alert('Waktu pemilihan telah selesai')</script>";
+								redirect('User','refresh');
+					        }
+					    }
 				}else{
 					echo "<script>alert('Hak suara anda telah digunakan!')</script>";
 					redirect('User','refresh');

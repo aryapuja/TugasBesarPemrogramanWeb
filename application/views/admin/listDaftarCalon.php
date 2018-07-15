@@ -29,7 +29,7 @@
 								<td><?php echo $key->Visi ?></td>
 								<td><?php echo nl2br($key->Misi) ?></td>
 								<td><?php echo $key->Ipk ?></td>
-								<td><?php echo $key->lampiran ?></td>
+								<td><a href="<?php echo base_url();?>assets/upload/<?php echo $key->lampiran ?>"><?php echo $key->lampiran ?></a></td>
 								<td>
 									<a href="<?php echo site_url()?>/Admin/terimaCalon/<?php echo $key->id_akun; ?>"><button type="button" class="btn btn-info">Lolos</button></a>
 									<a href="<?php echo site_url()?>/Admin/tolakCalon/<?php echo $key->id_akun; ?>"><button type="button" class="btn btn-warning">Tidak Lolos</button></a>	

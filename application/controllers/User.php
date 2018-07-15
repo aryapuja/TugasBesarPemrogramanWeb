@@ -23,6 +23,8 @@
 		{
 			$this->load->model('MainModel');
 			$data['info_calon'] = $this->MainModel->getCalon();
+			$this->load->model('AdminModel');
+			$data['waktu'] = $this->AdminModel->getWaktu();
 			$this->load->view('user/home',$data);
 		}
 

@@ -72,11 +72,11 @@
 						'jumlah_suara'=>'0',
 						'foto'=>'no_image.png'
 					);
-			// $memilih = array('memilih'=>'tidak');
 			$this->db->where('id_akun', $no);
 			$this->db->insert('calon', $data);
-			// $this->db->where('id_akun', $no);
-			// $this->db->update('akun', $memilih);
+			$level = array('level'=>'calon');
+			$this->db->where('id_akun', $no);
+			$this->db->update('akun', $level);
 		}
 
 		public function hapus($no,$tabel)

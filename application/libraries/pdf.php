@@ -56,6 +56,6 @@ public function load_view($view, $data = array())
     $time = time();
 
     // Output the generated PDF to Browser
-    $dompdf->stream("welcome-");
+    $dompdf->stream("laporan-$time");
 }
 }

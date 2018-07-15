@@ -48,7 +48,7 @@
 					<?php echo form_open_multipart('MainController/addAkun'); ?>
 
 					<div class="wrap-input100 validate-input" data-validate = "Masukkan Nomor KTM">
-						<input class="input100" type="text" name="no_ktm" placeholder="Nomor KTM">
+						<input class="input100" type="text" name="no_ktm" placeholder="Nomor KTM" onkeypress='return event.charCode >= 48 && event.charCode <= 57 || event.keyCode==8 || event.keyCode==9 || event.keyCode==37 || event.keyCode==39'>
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
@@ -79,15 +79,9 @@
 					</div>
 					<?php echo form_close(); ?>
 
-					<div class="text-center"> Sudah Punya Akun? 
-						<a class="txt1" href="#" data-toggle="modal" data-target="#login">
-							Login Disini!
-						</a>
-					</div>
-
-					<div class="text-center"> Back to 
+					<div class="text-center"> 
 						<a class="txt1" href="<?php echo site_url();?>/MainController">
-							Home
+							Back to Home
 						</a>
 					</div>
 				</form>
@@ -118,33 +112,5 @@
 	<script src="<?php echo base_url();?>assets/jquery.js"></script>
     <script src="<?php echo base_url();?>assets/jquery.min.js"></script>
 
-    <div id="login" class="modal fade" role="dialog">
-    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	    <div class="modal-dialog">
-	      <!-- Modal content-->
-	      <div class="modal-content">
-	        <div class="modal-body">
-	          <form action="<?php echo base_url().'index.php/MainController/login'?>" method="post">
-	          <div class="form-group">
-	            <label for="username">ID Akun:</label>
-	            <input type="text" class="form-control" name="id_akun" placeholder="Masukkan ID Akun" required="required">
-	          </div>
-
-	          <div class="form-group">
-	            <label for="password">Password:</label>
-	            <input type="password" class="form-control" name="password" placeholder="Masukkan Password" required="required">
-	          </div>
-
-	          <div class="form-group">
-	                <button type="submit" name="submit" value="Login" class="btn btn-success">Login</button>
-	                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-	              <!-- <button type="button" class="btn btn-primary btn-block">Lupa Password</button></a> -->
-	          </div>
-	          </form>
-	        </div>
-	      </div>
-	    </div>
-	  </div>
-	</div>
 </body>
 </html>

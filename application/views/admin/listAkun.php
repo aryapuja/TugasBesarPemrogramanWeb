@@ -28,15 +28,15 @@
 							<td><?php echo $key->level ?></td>
 							<td><?php echo $key->memilih ?></td>
 							<td>
-								<a href="<?php echo site_url()?>/Admin/editAkun/<?php echo $key->no_ktm; ?>"><button type="button" class="btn btn-info">Edit</button></a>
-								<a href="<?php echo site_url()?>/Admin/hapusAkun/<?php echo $key->no_ktm; ?>"><button type="button" class="btn btn-warning">Hapus</button></a>	
+								<!-- <a href="<?php echo site_url()?>/Admin/editAkun/<?php echo $key->no_ktm; ?>"><button type="button" class="btn btn-info">Edit</button></a> -->
+								<a href="<?php echo site_url()?>/Admin/hapusAkun/<?php echo $key->no_ktm; ?>"><button type="button" class="btn btn-warning" onclick="return confirm('Anda Yakin Ingin Menghapus Semuanya?')">Hapus</button></a>	
 							</td>
 						</tr>
 						<?php } ?>
 				</tbody>
 			</table>
 		</div>
-		<a href="<?php echo site_url()?>/Admin/resetLevel"><button type="button" class="btn btn-danger">Reset Level Akun</button></a> <br>
+		<a href="<?php echo site_url()?>/Admin/resetLevel"><button type="button" class="btn btn-danger" onclick="return confirm('Anda Yakin Ingin Mereset Semua Data??')">Reset Level Akun</button></a> <br>
 	</div>
 </body>
 </html>

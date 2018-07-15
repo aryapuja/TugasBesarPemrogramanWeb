@@ -10,7 +10,18 @@
 			if ($this->session->userdata('status')=='login') 
 			{
 				if($this->session->userdata('level')=='pemilih'){
-
+					$this->load->model('AdminModel');
+					$waktu = $this->AdminModel->getWaktu();
+					foreach ($waktu as $key ) {
+						$end_date = date('d-F-Y',strtotime($key->mulai."-2 week"));
+					}
+    				$todays_date = date("d-F-Y");
+    				if ($todays_date <= $end_date){
+					       
+					    }else{
+					        echo "<script>alert('Pendaftaran Calon Pemimpin Telah Ditutup')</script>";
+							redirect('User','refresh');
+					    }
 				}else{
 					echo "<script>alert('Anda sudah menjadi Calon!')</script>";
 					redirect('User','refresh');
@@ -44,7 +55,7 @@
 					$this->load->view('user/viewDaftar',$data);
 				}else{
 					$this->UserModel->daftarCalon();
-					echo '<script>alert("Pendaftaran sebagai calon berhasil.\\nHasil Seleksi bisa dilihat 3 hari sebelum pemilihan")</script>';
+					echo '<script>alert("Pendaftaran sebagai calon berhasil.\\nHasil Seleksi bisa dilihat seminggu sebelum pemilihan")</script>';
 					redirect('User','refresh');
 				}
         	}

@@ -15,7 +15,20 @@
 					if(!$this->acl->is_allowed($current_controller,$this->session->userdata('level'))){
 						echo '<script>alert("Hanya akun calon yang bisa mengakses halaman ini")</script>';
 						redirect('User','refresh');
+					}else{
+					$this->load->model('AdminModel');
+					$waktu = $this->AdminModel->getWaktu();
+					foreach ($waktu as $key ) {
+						$end_date = date('d-F-Y',strtotime($key->mulai."-1 week"));
 					}
+    				$todays_date = date("d-F-Y");
+    				if ($todays_date <= $end_date){
+					       
+					    }else{
+					        echo "<script>alert('Waktu perubahan informasi calon telah habis')</script>";
+							redirect('User','refresh');
+					    }
+				}
 				}
 			}else{	
 				redirect('MainController','refresh');

@@ -66,7 +66,6 @@
 					);
 			$this->db->insert('daftar_calon', $data);
 		}
-	
 	}
 	
 	/* End of file UserModel.php */
