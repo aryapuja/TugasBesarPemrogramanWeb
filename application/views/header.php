@@ -18,7 +18,7 @@
 	<title>Web</title>
 </head>
 <body>
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> -->
 		<nav class="navbar navbar-default" role="navigation">
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
