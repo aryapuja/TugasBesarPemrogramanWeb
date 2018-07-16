@@ -8,7 +8,11 @@
 			parent::__construct();
 			if ($this->session->userdata('status')=='login') 
 			{
-				
+				$this->session->unset_userdata('nama');
+				$this->load->model('MainModel');
+				$result=$this->MainModel->getInfoAkun($this->session->userdata('id'))->row();
+				$nama=$result->nama_akun;
+				$this->session->set_userdata('nama',$nama);
 			}else{	
 				redirect('MainController','refresh');
 			}
@@ -17,21 +21,22 @@
 
 		public function index()
 		{
-			$this->load->view('user/user');
+			$this->load->model('MainModel');
+			$data['info_calon'] = $this->MainModel->getCalon();
+			$this->load->model('AdminModel');
+			$data['waktu'] = $this->AdminModel->getWaktu();
+			$this->load->view('user/home',$data);
 		}
 
 		public function editAkun($id)
 		{
 			$this->load->model('UserModel');
-			$data['akun']=$this->UserModel->getInfoById($id);
-
-			if ($this->form_validation->run() == FALSE) {
-				$this->load->view('user/editAkun',$data);
-			} else {
-				$this->UserModel->editAkun($id);
-				echo "<script>alert('Informasi Akun Berhasil di Update!')</script>";
-				$this->load->view('user/user');
-			}
+			$this->UserModel->editAkun($id);
+			echo "<script>alert('Informasi Akun Berhasil di Update!')</script>";
+			// $this->load->model('MainModel');
+			// $data['info_calon'] = $this->MainModel->getCalon();
+			// $this->load->view('user/home',$data);
+			redirect('User','refresh');
 		}
 	
 	}

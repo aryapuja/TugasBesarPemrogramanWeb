@@ -130,10 +130,33 @@
 			} else {
 				$this->AdminModel->updateWaktu($waktu);
 				echo "<script>alert('Waktu Berhasil Dirubah!')</script>";
-
-				$data['waktu'] = $this->AdminModel->getWaktu();
-				$this->load->view('admin/waktu', $data);
+				redirect('Admin/waktu','refresh');
+				// $data['waktu'] = $this->AdminModel->getWaktu();
+				// $this->load->view('admin/waktu', $data);
 			}
+		}
+
+		public function resetLevel()
+		{
+			$this->load->model('AdminModel');
+			$this->AdminModel->resetLevel();
+			echo "<script>alert('Semua level akun diubah menjadi Pemilih!')</script>";
+			$data['akun'] = $this->AdminModel->listAkun();
+			$this->load->view('admin/listAkun', $data);
+		}
+
+		public function report()
+		{
+			$this->load->library('pdf');
+			$this->load->model('MainModel');
+			$this->load->model('AdminModel');
+			$data['akun'] = $this->AdminModel->listAkun();
+			$data['info_calon'] = $this->MainModel->getCalon();
+			$data['belum'] = $this->AdminModel->getBelum('belum');
+			$data['sudah'] = $this->AdminModel->getBelum('sudah');
+			$data['jmlhBlm'] = count($data['belum']);
+			$data['jmlhSdh'] = count($data['sudah']);
+			$this->pdf->load_view('admin/report',$data);
 		}
 
 	}

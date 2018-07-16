@@ -198,7 +198,7 @@
 
           <div class="form-group">
                 <button type="submit" name="submit" value="Login" class="btn btn-success">Login</button>
-                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
               <!-- <button type="button" class="btn btn-primary btn-block">Lupa Password</button></a> -->
           </div>
           </form>

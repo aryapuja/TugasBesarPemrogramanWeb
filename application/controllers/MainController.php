@@ -16,14 +16,6 @@
 			$this->load->view('home2',$data);
 		}
 
-		public function list($id)
-		{
-			$this->load->model('MainModel');
-			$data['calon_list'] = $this->MainModel->getCalon();
-			$data['info_calon'] = $this->MainModel->getInfoCalon($id);
-			$this->load->view('list', $data);
-		}
-
 		public function login()
 		{
 			$this->load->model('MainModel');
@@ -39,10 +31,12 @@
 				$id_akun=$result->id_akun;
 				$nama=$result->nama_akun;
 				$level=$result->level;
+				$memilih=$result->memilih;
 				$array = array(
 					'id' => $id_akun,
 					'nama' => $nama,
 					'level' => $level,
+					'memilih' => $memilih,
 					'status' => 'login'
 				);
 				$this->session->set_userdata($array);
@@ -70,13 +64,13 @@
 		{
 			$this->load->model('MainModel');
 			$this->form_validation->set_rules('no_ktm', 'Nomor KTM', 'trim|required|max_length[15]|is_unique[akun.no_ktm]|is_unique[daftar_akun.no_ktm]');
-			$this->form_validation->set_rules('id_akun', 'ID Akun', 'trim|required|min_length[4]|max_length[12]|is_unique[akun.id_akun]|is_unique[daftar_akun.id_akun');
+			$this->form_validation->set_rules('id_akun', 'ID Akun', 'trim|required|min_length[4]|max_length[12]|is_unique[akun.id_akun]|is_unique[daftar_akun.id_akun]');
 			$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[4]|max_length[12]');
 			$this->form_validation->set_rules('password2', 'Konfirmasi Password', 'trim|required|min_length[4]|max_length[12]|matches[password]');
 			$this->form_validation->set_rules('nama_akun', 'Nama Akun', 'trim|required|min_length[1]|max_length[255]');
 			if ($this->form_validation->run() == FALSE) {
 				// echo "<script>alert('Terdapat kesalahan dalam pendaftaran, silahkan cek kembali data yang ada masukkan')</script>";
-				$this->load->view('register2');
+				$this->load->view('register3');
 			} else {
 				$this->MainModel->regisAkun();
 				echo "<script>alert('Permintaan pendaftaran berhasil dikirim.\\nJika dalam 2x24 jam belum dapat login, hubungi admin')</script>";

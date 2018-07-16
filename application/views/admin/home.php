@@ -10,9 +10,6 @@
 </style> 
 <body>
 <div class="container-fluid">
-     <h2>Total Partisipan: <?php echo $jmlhBlm + $jmlhSdh; ?> </h2>
-    <h2>Jumlah suara yang belum memilih: <?php echo $jmlhBlm; ?> </h2>
-    <h2>Jumlah suara Masuk: <?php echo $jmlhSdh; ?> </h2>
      <center>   <h1>Perolehan Suara</h1>    </center>
 	<div class="row">
         <!-- Column -->

@@ -12,12 +12,12 @@
 			<legend>Pengaturan Waktu Pemilihan</legend>
 
 			<div class="form-group">
-				<label for="mulai">Waktu Mulai:</label>
+				<label for="mulai">Waktu Mulai Pemilihan:</label>
 			 	<input type="date" class="form-control" name="mulai" value="<?php echo $waktu[0]->mulai ?>">
 			</div>
 
 			<div class="form-group">
-				<label for="selesai">Waktu Mulai:</label>
+				<label for="selesai">Waktu Selesai Pemilihan:</label>
 			 	<input type="date" class="form-control" name="selesai" value="<?php echo $waktu[0]->selesai ?>">
 			</div>
 
